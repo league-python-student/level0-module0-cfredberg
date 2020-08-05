@@ -12,9 +12,9 @@ class Eye():
         
     def draw(self):
         self.turtle.begin_fill()
-        self.myTurtle.goto(self.x, self.y)
-        self.myTurtle.circle(radius=self.radius, steps=20)
-        self.myTurtle.end_fill()
+        self.turtle.goto(self.x, self.y)
+        self.turtle.circle(radius=self.radius, steps=20)
+        self.turtle.end_fill()
 
 def setBackground(filename):
     
@@ -39,9 +39,12 @@ def keyPressed():
     # the space bar. Run the program to test it.
 
     # 10. Increment the x and y variables of the 2 eye variables by 5:
-    #     leftEye.x += 5
+    leftEye.x += 5
+    rightEye.x += 5
     
     # 11. Call the .draw() method for both eye variables.
+    leftEye.draw()
+    rightEye.draw()
 
 if __name__ == '__main__':
     window = turtle.Screen()
@@ -55,27 +58,29 @@ if __name__ == '__main__':
     
     # 2. Call the setBackground() function with your variable inside of the parenthesis
     #    for example, setBackground(bgImage)
-    
+    setBackground("bigEyedCat.gif")
     # 3. Make a new turtle
-    
+    t = turtle.Turtle()
     # 4. Set the turtle color and pen color to red (or any color you want)
     #    using .color('red', 'red')
-    
+    t.color('red', 'red')
     # 5. Set the turtle width to 0 so no outlines are drawn
-    
+    t.width(0)
     # 6. Set the turtle speed to 0 (fastest)
-    
+    t.speed(0)
     # 7. Run the program and click on one of the cat's eyes. 
     #    The x,y position of the eye will be printed at the bottom of your processing window. 
     #    Variables for x and y have been created at the top of your sketch, 
     #    now you can set them equal to the values you just found. Watch for negative signs!
     
     # 8. After you've found the x and y for the eyes create 2 eye variables and initialize them:
-    #    leftEye = Eye(turtle=myTurtle, x=-34, y=11, radius=30)  
-    #    rightEye = Eye(turtle=myTurtle, x=40, y=-5, radius=30)
+    leftEye = Eye(turtle=t, x=-30, y=5, radius=30)
+    rightEye = Eye(turtle=t, x=45, y=-10, radius=30)
     
     # 9. Call the .draw() method on both eye variables
-
+    leftEye.draw()
+    rightEye.draw()
+    t.hideturtle()
 # ===================== DO NOT EDIT THE CODE BELOW ============================
     window.onclick(screenClicked)
     window.onkeypress(keyPressed, 'space')

@@ -10,15 +10,15 @@ if __name__ == '__main__':
     # Put this sentence in a pop-up message box:
     messagebox.showinfo(message="If you find yourself having to cross a piranha-infested river, here's how to do it...")
     # Get the player to enter an adjective
-    ad = simpledialog.askstring(prompt="enter an adjective")
+    ad = simpledialog.askstring(title=None, prompt="enter an adjective")
     # Get the player to enter a type of liquid
-    li = simpledialog.askstring(prompt="enter a liquid")
+    li = simpledialog.askstring(title=None, prompt="enter a liquid")
     # Get the player to enter a body part
-    bo = simpledialog.askstring(prompt="enter a body part")
+    bo = simpledialog.askstring(title=None, prompt="enter a body part")
     # Get the player to enter a verb
-    ve = simpledialog.askstring(prompt="enter a verb")
+    ve = simpledialog.askstring(title=None, prompt="enter a verb")
     # Get the player to enter a place
-    pl = simpledialog.askstring(prompt="enter a place")
+    pl = simpledialog.askstring(title=None, prompt="enter a place")
     # The story below has has been written as a group of Strings joined together by + signs.
     # The story contains place holders, indicated by [** **] which you need to replace with
     # the values entered by the player.
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     
     # Make a pop-up that contains the final story. The \n escape characters add line breaks to the story. 
     # If you need to, move them around to make your story look better in the pop-up
-    messagebox.showinfo(story)
+    messagebox.showinfo(None, story)
     
     # If you want to write your own Madlib story, just change the story variable and ask the player different questions.
 
